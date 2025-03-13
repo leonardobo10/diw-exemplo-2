@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testes Flexbox</title>
-    <style>
-    * {
+ <html lang="pt-br">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Testes Flexbox</title>
+     <style>
+         * {
              font-size: 16px;
              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
          }
  
+         .cabecalho {
+             display: flex;
+             flex-wrap: wrap;
+             align-content: start;
+         }
+ 
          .container {
-            border: 1px solid #c2c2c2;
+             border: 1px solid #c2c2c2;
              box-shadow: 0.5rem .5rem .3rem .01rem #c2c2c2;
              height: 35rem;
              display: flex;
              flex-wrap: wrap;
              align-content: start;
-             align-items: end;
          }
  
          .item {
@@ -25,25 +31,66 @@
              color: white;
              font-weight: bold;
              padding: 1rem;
-             margin: 1rem;
-             border: 1px solid #c2c2c2;
-             box-shadow: 0.5rem .5rem .3rem .01rem #c2c2c2;
+             margin: .1rem;
              width: 5em;
-             height: 5rem;
-             display: flex;
-             flex-wrap: wrap;
-             align-content: center;
-
+             height: 3rem;
          }
-         
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="item">item 1</div>
-        <div class="item">item 2</div>
-        <div class="item">item 3</div>
-    
-    </div>
-</body>
-</html>
+ 
+         .logo {
+             flex-grow: 1;
+         }
+ 
+         .titulo-do-site {
+             flex-grow: 12;
+         }
+ 
+         .sandwich-menu {
+             flex-grow: 1;
+         }
+ 
+         .painel {
+             height: 30rem;
+             display: flex;
+         }
+ 
+         .menu-lateral {
+             border: 3px solid green;
+             padding: 1rem;
+             margin: .1rem;
+             flex-grow: 3;
+         }
+ 
+         .parte-principal {
+             border: 3px solid green;
+             padding: 1rem;
+             margin: .1rem;
+             flex-grow: 11;
+         }
+ 
+         .tile {
+             background-color: #e3e3e3;
+             width: 100%;
+             height: 3rem;
+             margin: .5rem
+         }
+     </style>
+ </head>
+ 
+ <body>
+     <header class="cabecalho">
+         <div class="item logo">Logo</div>
+         <div class="item titulo-do-site">Título do Site</div>
+         <div class="item sandwich-menu">Menu</div>
+     </header>
+     <section class="painel">
+         <nav class="menu-lateral">Navegação</nav>
+         <nav class="menu-lateral">
+             <div class="tile">item 01</div>
+             <div class="tile">item 02</div>
+             <div class="tile">item 03</div>
+             <div class="tile">item 04</div>
+         </nav>
+         <main class="parte-principal">Parte principal do site</main>
+     </section>
+ </body>
+ 
